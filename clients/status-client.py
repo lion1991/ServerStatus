@@ -15,8 +15,8 @@ PORT = 9186
 PASSWORD = "password"
 INTERVAL = 1
 PORBEPORT = 22
-HD = "h1`.121221.xyz"
-LD = "103.135.101.160"
+HD = "hd.121221.xyz"
+LD = "dm.121221.xyz"
 SZ = "iplc.121221.xyz"
 TW = "tw.121221.xyz"
 
