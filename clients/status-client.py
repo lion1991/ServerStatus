@@ -6,13 +6,13 @@
 # 时间: 20200407
 # 说明: 默认情况下修改server和user就可以了。丢包率监测方向可以自定义，例如：CU = "www.facebook.com"。
 
-SERVER = "dm.121221.xyz"
-USER = "ld"
+SERVER = "127.0.0.1"
+USER = "user"
 
 
 
 PORT = 9186
-PASSWORD = "1991626"
+PASSWORD = "password"
 INTERVAL = 1
 PORBEPORT = 22
 HD = "h1`.121221.xyz"
