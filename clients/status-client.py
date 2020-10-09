@@ -212,7 +212,7 @@ def _net_speed():
             netSpeed["avgtx"] = avgtx
         time.sleep(INTERVAL)
 
-# mark参数传递到前端js作为节点标记
+# mark参数作为节点标记
 def get_realtime_date():
     t1 = threading.Thread(
         target=_ping_thread,
