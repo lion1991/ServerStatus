@@ -31,28 +31,6 @@ import subprocess
 import threading
 from requests import post
 
-"""
-TG 消息推送
-"""
-TG_TOKEN = '1306507927:AAE21aOhh5wgbgGUtsT5qBid3CAmmUZHlt4'
-CHAT_ID = '-1001074761734'
-def post_tg(message):
-    telegram_message = message
-
-    params = (
-        ('chat_id', CHAT_ID),
-        ('text', telegram_message),
-        ('parse_mode', "Markdown"), #可选Html或Markdown
-        ('disable_web_page_preview', "yes")
-    )
-    telegram_url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
-    telegram_req = post(telegram_url, params=params)
-    telegram_status = telegram_req.status_code
-    if telegram_status == 200:
-        print("INFO: Telegram Message sent")
-    else:
-        print("Telegram Error")
-
 
 def get_uptime():
     with open('/proc/uptime', 'r') as f:
