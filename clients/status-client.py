@@ -172,6 +172,7 @@ def _ping_thread(host, mark, port):
             pingTime[mark] = int((timeit.default_timer()-b)*1000)
         except:
             lostPacket += 1
+	    pingTime[mark] = 0
 	
         finally:
             allPacket += 1
