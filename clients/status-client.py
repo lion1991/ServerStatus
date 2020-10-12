@@ -15,8 +15,8 @@ PORT = 9186
 PASSWORD = "password"
 INTERVAL = 1
 PORBEPORT = 22
-HD = "h1`.121221.xyz"
-LD = "103.135.101.160"
+HD = "hd.121221.xyz"
+LD = "dm.121221.xyz"
 SZ = "iplc.121221.xyz"
 TW = "tw.121221.xyz"
 
@@ -30,28 +30,6 @@ import json
 import subprocess
 import threading
 from requests import post
-
-"""
-TG 消息推送
-"""
-TG_TOKEN = '1306507927:AAE21aOhh5wgbgGUtsT5qBid3CAmmUZHlt4'
-CHAT_ID = '-1001074761734'
-def post_tg(message):
-    telegram_message = message
-
-    params = (
-        ('chat_id', CHAT_ID),
-        ('text', telegram_message),
-        ('parse_mode', "Markdown"), #可选Html或Markdown
-        ('disable_web_page_preview', "yes")
-    )
-    telegram_url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
-    telegram_req = post(telegram_url, params=params)
-    telegram_status = telegram_req.status_code
-    if telegram_status == 200:
-        print("INFO: Telegram Message sent")
-    else:
-        print("Telegram Error")
 
 
 def get_uptime():
@@ -194,11 +172,7 @@ def _ping_thread(host, mark, port):
             pingTime[mark] = int((timeit.default_timer()-b)*1000)
         except:
             lostPacket += 1
-	 #   resetmsg += 1
-           # resetmsg = lostPacket
-	    #if resetmsg == 5:
-	      #  post_tg('你好，主人! IPLC香港落地挂掉啦！')
-	#	resetmsg == 0
+	
         finally:
             allPacket += 1
 
@@ -238,7 +212,7 @@ def _net_speed():
             netSpeed["avgtx"] = avgtx
         time.sleep(INTERVAL)
 
-# mark参数传递到前端js作为节点标记
+# mark参数作为节点标记
 def get_realtime_date():
     t1 = threading.Thread(
         target=_ping_thread,
